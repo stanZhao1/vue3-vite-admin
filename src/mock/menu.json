@@ -1,0 +1,77 @@
+[
+  {
+    "id": "1",
+    "label": "无侧边栏",
+    "path": "/",
+    "permission": "index:*",
+    "children": []
+  },
+  {
+    "id": "2",
+    "label": "带侧边栏",
+    "path": "/withSidebar",
+    "permission": "withSidebar:*",
+    "children": [
+      {
+        "id": "2-1",
+        "label": "公共表格",
+        "path": "table",
+        "permission": "withSidebar:table:*"
+      },
+      {
+        "id": "2-1",
+        "label": "富文本编辑器",
+        "path": "editor",
+        "permission": "withSidebar:editor:*"
+      }
+    ]
+  },
+  {
+    "id": "3",
+    "label": "侧边栏多级",
+    "path": "/nestedNavbar",
+    "permission": "nestedNavbar:*",
+    "children": [
+      {
+        "id": "3-1",
+        "label": "level1",
+        "path": "level1",
+        "permission": "withSidebar:level1:*",
+        "children": [
+          {
+            "id": "3-1-1",
+            "label": "level1-1",
+            "path": "level1-1",
+            "permission": "withSidebar:level1-1:*",
+            "children": [{
+              "id": "3-1-1-1",
+              "label": "level1-1-1",
+              "path": "level1-1-1",
+              "permission": "withSidebar:level1-1-1:*"
+            }]
+          }
+        ]
+      },
+      {
+        "id": "3-2",
+        "label": "level2",
+        "path": "level2",
+        "permission": "withSidebar:level2:*",
+        "children": [
+          {
+            "id": "3-2-1",
+            "label": "level2-1",
+            "path": "level2-1",
+            "permission": "withSidebar:level2-1:*"
+          }
+        ]
+      },
+      {
+        "id": "3-3",
+        "label": "level3",
+        "path": "level3",
+        "permission": "withSidebar:level3:*"
+      }
+    ]
+  }
+]
