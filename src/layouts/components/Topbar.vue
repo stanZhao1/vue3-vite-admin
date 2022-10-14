@@ -1,7 +1,11 @@
 <template>
   <el-header class="p-0 flex justify-items-center border-b">
     <!-- logo -->
-    <div class="w-[200px] text-center leading-[60px]">LOGO</div>
+    <div
+      class="w-[var(--leftMenu-height)] text-center leading-[var(--topbar-height)]"
+    >
+      LOGO
+    </div>
     <!-- 导航 -->
     <el-menu
       :default-active="activeTopMenuIndex"
@@ -22,7 +26,7 @@
     </el-menu>
     <!-- 菜单 -->
     <el-dropdown class="pr-[20px]">
-      <span class="el-dropdown-link leading-[60px]">
+      <span class="el-dropdown-link leading-[var(--topbar-height)]">
         个人中心
         <el-icon class="el-icon--right">
           <arrow-down />

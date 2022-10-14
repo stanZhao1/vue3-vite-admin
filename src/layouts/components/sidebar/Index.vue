@@ -1,7 +1,7 @@
 <template>
   <el-aside
     v-if="indexStore.selectedMenu.children.length"
-    width="200px"
+    width="var(--leftMenu-height)"
     class="left-menu-aside"
   >
     <el-scrollbar view-class="h-full">
@@ -32,6 +32,6 @@ const activeLeftMenuIndex = computed(() => {
 
 <style scoped>
 .left-menu-aside {
-  height: calc(100vh - 60px);
+  height: calc(100vh - var(--topbar-height));
 }
 </style>

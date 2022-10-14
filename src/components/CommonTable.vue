@@ -1,32 +1,37 @@
 <template>
-  <el-table :data="tableData" style="width: 100%">
-    <el-table-column prop="date" label="Date" width="180" />
-    <el-table-column prop="name" label="Name" width="180" />
-    <el-table-column prop="address" label="Address" />
+  <el-table
+    :data="data"
+    style="
+      width: 100%;
+      height: calc(100vh - var(--topbar-height) - var(--footer-height) - 80px);
+    "
+  >
+    <el-table-column
+      v-for="(field, index) in fields"
+      :key="field.label"
+      v-bind="field"
+    >
+      <template v-if="field.scopedSlot" #default="{ row, column, $index }">
+        <slot
+          :name="field.scopedSlot"
+          v-bind="{
+            row,
+            column,
+            $index,
+          }"
+        >
+        </slot>
+      </template>
+    </el-table-column>
   </el-table>
+  <el-pagination
+    background
+    layout="prev, pager, next"
+    :total="1000"
+    class="absolute bottom-[10px] left-[50%] translate-x-[-50%]"
+  />
 </template>
 
 <script lang="ts" setup>
-const tableData = [
-  {
-    date: "2016-05-03",
-    name: "Tom",
-    address: "No. 189, Grove St, Los Angeles",
-  },
-  {
-    date: "2016-05-02",
-    name: "Tom",
-    address: "No. 189, Grove St, Los Angeles",
-  },
-  {
-    date: "2016-05-04",
-    name: "Tom",
-    address: "No. 189, Grove St, Los Angeles",
-  },
-  {
-    date: "2016-05-01",
-    name: "Tom",
-    address: "No. 189, Grove St, Los Angeles",
-  },
-];
+const props = defineProps(["data", "fields"]);
 </script>
